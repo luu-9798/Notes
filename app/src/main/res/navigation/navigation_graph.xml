@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragment_note_list">
+
+    <fragment
+        android:id="@+id/fragment_note_list"
+        android:name="com.alpharettasolutions.notes.view.NoteListFragment"
+        android:label="NoteListFragment">
+        <action
+            android:id="@+id/NoteListFragment_to_NoteDetailFragment"
+            app:destination="@id/fragment_note_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_note_detail"
+        android:name="com.alpharettasolutions.notes.view.NoteDetailFragment"
+        android:label="NoteDetailFragment">
+        <action
+            android:id="@+id/NoteDetailFragment_to_NoteListFragment"
+            app:destination="@id/fragment_note_list"/>
+    </fragment>
+
+</navigation>
