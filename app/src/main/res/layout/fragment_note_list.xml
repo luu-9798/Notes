@@ -10,10 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/myObjectRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Note List"
+            android:layout_margin="8dp"
+            android:scrollbars="vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
