@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="place_holder_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, massa non feugiat tempor, risus magna pharetra nibh, id congue nunc elit vel ipsum. Proin non dictum velit. Sed laoreet malesuada metus, id gravida elit blandit eget. Sed euismod, nibh ut faucibus tempus, nisi nunc laoreet augue, vitae auctor ante ipsum ac libero. Nam euismod, mauris id scelerisque faucibus, augue magna porttitor risus, a bibendum quam risus eu nibh. Sed auctor, purus id tincidunt hendrerit, elit tellus placerat odio, eget gravida nulla leo id orci.</string>
 </resources>
