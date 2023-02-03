@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
 
+    var currentTitle: String = ""
+    var currentContent: String = ""
+
     private val _createNoteLiveData: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
     val createNoteLiveData: LiveData<Boolean> = _createNoteLiveData
 
