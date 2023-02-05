@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:src="@drawable/ic_add"
-            android:onClick="@{() -> viewModel.createNewNote()}"
+            android:onClick="@{() -> viewModel.clickCreateNoteButton()}"
             app:tint="?attr/colorOnPrimary"
             app:backgroundTint="?attr/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
