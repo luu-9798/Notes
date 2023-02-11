@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateFromListFragmentToDetailFragment() {
         val options = NavOptions.Builder()
-            .setEnterAnim(R.anim.enter_from_left)
+            //.setEnterAnim(R.anim.enter_from_left)
             .build()
         findNavController(this, R.id.navigation_host_fragment)
             .navigate(R.id.NoteListFragment_to_NoteDetailFragment, null, options)

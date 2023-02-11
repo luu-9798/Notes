@@ -1,10 +1,10 @@
-package com.alpharettasolutions.notes.model
+package com.alpharettasolutions.notes.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Note(
+data class NoteEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val title: String,

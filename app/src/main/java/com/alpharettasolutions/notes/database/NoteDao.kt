@@ -5,22 +5,21 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.alpharettasolutions.notes.model.Note
 
 @Dao
 interface NoteDao {
     @Insert
-    fun insert(note: Note)
+    fun insert(noteEntity: NoteEntity)
 
     @Update
-    fun update(note: Note)
+    fun update(noteEntity: NoteEntity)
 
     @Delete
-    fun delete(note: Note)
+    fun delete(noteEntity: NoteEntity)
 
-    @Query("SELECT * FROM note")
-    fun getAll(): List<Note>
+    @Query("SELECT * FROM NoteEntity")
+    fun getAll(): List<NoteEntity>
 
-    @Query("SELECT * FROM note WHERE id = :id")
-    fun getById(id: Int): Note
+    @Query("SELECT * FROM NoteEntity WHERE id = :id")
+    fun getById(id: Int): NoteEntity
 }
