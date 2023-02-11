@@ -86,7 +86,8 @@
                 android:text="Save"
                 android:layout_marginEnd="4dp"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#4CAF50" />
+                android:backgroundTint="#4CAF50"
+                android:onClick="@{() -> viewModel.clickSaveChangesButton()}"/>
 
             <Button
                 android:id="@+id/button_discard"
@@ -96,7 +97,8 @@
                 android:text="Discard"
                 android:layout_marginStart="4dp"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#F44336" />
+                android:backgroundTint="#F44336"
+                android:onClick="@{() -> viewModel.clickDiscardChangesButton()}"/>
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

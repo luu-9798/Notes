@@ -15,6 +15,14 @@ class MainViewModel : ViewModel() {
     val viewStateLiveData: LiveData<ViewState> = _viewStateLiveData
 
     fun clickCreateNoteButton() {
-        _viewStateLiveData.value = ViewState.CreateNoteButtonClicked
+        _viewStateLiveData.value = ViewState.OPEN_NOTE_DETAIL_FRAGMENT
+    }
+
+    fun clickSaveChangesButton() {
+        _viewStateLiveData.value = ViewState.CLOSE_NOTE_DETAIL_FRAGMENT
+    }
+
+    fun clickDiscardChangesButton() {
+        _viewStateLiveData.value = ViewState.CLOSE_NOTE_DETAIL_FRAGMENT
     }
 }

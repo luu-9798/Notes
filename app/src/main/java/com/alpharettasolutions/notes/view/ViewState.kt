@@ -1,5 +1,6 @@
 package com.alpharettasolutions.notes.view
 
-sealed class ViewState() {
-    object CreateNoteButtonClicked: ViewState()
+enum class ViewState {
+    OPEN_NOTE_DETAIL_FRAGMENT,
+    CLOSE_NOTE_DETAIL_FRAGMENT
 }

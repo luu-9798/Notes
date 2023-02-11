@@ -23,8 +23,11 @@ class MainActivity : AppCompatActivity() {
     private fun initObservers() {
         viewModel.viewStateLiveData.observe(this) { viewState ->
             when (viewState) {
-                ViewState.CreateNoteButtonClicked -> {
+                ViewState.OPEN_NOTE_DETAIL_FRAGMENT -> {
                     navigateFromListFragmentToDetailFragment()
+                }
+                ViewState.CLOSE_NOTE_DETAIL_FRAGMENT -> {
+                    findNavController(this, R.id.navigation_host_fragment).popBackStack()
                 }
             }
         }
