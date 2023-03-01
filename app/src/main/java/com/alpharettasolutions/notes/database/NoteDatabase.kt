@@ -1,5 +1,6 @@
 package com.alpharettasolutions.notes.database
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.RoomDatabase
 

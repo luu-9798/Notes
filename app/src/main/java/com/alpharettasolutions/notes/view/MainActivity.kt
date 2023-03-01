@@ -6,7 +6,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation.findNavController
 import com.alpharettasolutions.notes.R
+import com.alpharettasolutions.notes.database.NoteDatabase
 import com.alpharettasolutions.notes.viewmodel.MainViewModel
+import com.alpharettasolutions.notes.viewmodel.MainViewModelFactory
+import com.alpharettasolutions.notes.viewmodel.NoteRepository
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
@@ -15,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel = ViewModelProvider(
+            this,
+            MainViewModelFactory(this.application)
+        )[MainViewModel::class.java]
 
         initObservers()
     }
