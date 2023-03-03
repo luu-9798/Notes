@@ -28,12 +28,16 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
         if (currentTitle.isEmpty() || currentContent.isEmpty()) {
             _viewStateLiveData.value = ViewState.NOTIFY_EMPTY_TITLE_OR_CONTENT
         } else {
-            _viewStateLiveData.value = ViewState.CLOSE_NOTE_DETAIL_FRAGMENT
+            closeNoteDetailFragment()
         }
 
     }
 
     fun clickDiscardChangesButton() {
+        _viewStateLiveData.value = ViewState.NOTIFY_DISCARD_CHANGES
+    }
+
+    fun closeNoteDetailFragment() {
         _viewStateLiveData.value = ViewState.CLOSE_NOTE_DETAIL_FRAGMENT
     }
     /** END SECTION **/

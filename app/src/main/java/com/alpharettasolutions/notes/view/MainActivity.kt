@@ -35,7 +35,19 @@ class MainActivity : AppCompatActivity() {
                     findNavController(this, R.id.navigation_host_fragment).popBackStack()
                 }
                 ViewState.NOTIFY_EMPTY_TITLE_OR_CONTENT -> {
-                    displayAlertDialog("TITLE OR CONTENT IS EMPTY", "Title and content must not be empty")
+                    displayAlertDialog(
+                        title = "Empty Title or Content ",
+                        message = "Title and content must not be empty"
+                    )
+                }
+                ViewState.NOTIFY_DISCARD_CHANGES -> {
+                    displayAlertDialog(
+                        title = "Discard Changes",
+                        message = "Are you sure you want to discard your changes?",
+                        cancellable = true
+                    ) {
+                        viewModel.closeNoteDetailFragment()
+                    }
                 }
             }
         }
@@ -49,12 +61,30 @@ class MainActivity : AppCompatActivity() {
             .navigate(actionId, null, options)
     }
 
-    private fun displayAlertDialog(title: String, message: String) {
+    /**
+     * displayAlertDialog - Function to display an alert dialog
+     *
+     * @param title      : Title of the alert dialog
+     * @param message    : Message to be displayed in the alert dialog
+     * @param cancellable: Boolean value to determine whether the alert dialog can be cancelled or not
+     * @param callback   : Callback function to be executed when "OK" button is clicked
+     */
+    private fun displayAlertDialog(
+        title: String,
+        message: String,
+        cancellable: Boolean = false,
+        callback: (() -> Unit)? = null
+    ) {
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle(title)
         alertDialogBuilder.setMessage(message)
 
-        alertDialogBuilder.setPositiveButton("OK") { _, _ -> }
+        alertDialogBuilder.setPositiveButton("OK") { _, _ -> callback?.invoke() }
+
+        if (cancellable) {
+            alertDialogBuilder.setNegativeButton("Cancel") { _, _ -> }
+        }
+
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
