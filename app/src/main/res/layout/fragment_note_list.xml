@@ -8,14 +8,16 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/myObjectRecyclerView"
+            android:id="@+id/recycler_view_notes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintVertical_bias="0.95"
             app:layout_constraintHorizontal_bias="0.9"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

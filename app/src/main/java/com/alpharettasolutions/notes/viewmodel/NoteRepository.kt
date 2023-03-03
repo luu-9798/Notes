@@ -3,7 +3,7 @@ package com.alpharettasolutions.notes.viewmodel
 import android.content.Context
 import com.alpharettasolutions.notes.database.NoteDao
 import com.alpharettasolutions.notes.database.NoteDatabaseManager
-import com.alpharettasolutions.notes.database.NoteEntity
+import com.alpharettasolutions.notes.model.NoteEntity
 import kotlinx.coroutines.flow.Flow
 
 class NoteRepository(context: Context) {
@@ -13,7 +13,7 @@ class NoteRepository(context: Context) {
 
     // Define a function to get all notes from the database.
     // The function returns a flow of List<NoteEntity> objects.
-    fun getAll(): Flow<List<NoteEntity>> {
+    fun getAll(): List<NoteEntity> {
         return noteDao.getAll()
     }
 

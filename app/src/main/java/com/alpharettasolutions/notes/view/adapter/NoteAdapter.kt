@@ -6,15 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.alpharettasolutions.notes.R
-import com.alpharettasolutions.notes.database.NoteEntity
-import com.alpharettasolutions.notes.model.NoteModel
+import com.alpharettasolutions.notes.model.NoteEntity
 
-class NoteAdapter(private val noteList: List<NoteModel>): RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
+class NoteAdapter(private val noteList: List<NoteEntity>): RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val titleTextView = itemView.findViewById<TextView>(R.id.tv_note_title)
         private val contentTextView = itemView.findViewById<TextView>(R.id.tv_note_content)
 
-        fun bind(noteEntity: NoteModel) {
+        fun bind(noteEntity: NoteEntity) {
             titleTextView.text = noteEntity.title
             contentTextView.text = noteEntity.content
         }

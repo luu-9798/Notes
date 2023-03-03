@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.alpharettasolutions.notes.R
 import com.alpharettasolutions.notes.databinding.FragmentNoteListBinding
+import com.alpharettasolutions.notes.view.adapter.NoteAdapter
 import com.alpharettasolutions.notes.viewmodel.MainViewModel
 
 class NoteListFragment : Fragment() {
@@ -18,6 +19,11 @@ class NoteListFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+
+        viewModel.notesLiveData.observe(this) {
+            val adapter = NoteAdapter(noteList = it)
+            binding.recyclerViewNotes.adapter = adapter
+        }
     }
 
     override fun onCreateView(

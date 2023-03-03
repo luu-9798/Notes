@@ -1,4 +1,4 @@
-package com.alpharettasolutions.notes.database
+package com.alpharettasolutions.notes.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

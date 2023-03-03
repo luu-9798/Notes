@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         )[MainViewModel::class.java]
 
         initObservers()
+        viewModel.getAllNotes()
     }
 
     private fun initObservers() {
