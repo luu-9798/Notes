@@ -6,28 +6,25 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.alpharettasolutions.notes.R
+import com.alpharettasolutions.notes.databinding.ViewHolderNoteListBinding
 import com.alpharettasolutions.notes.model.NoteEntity
 
 class NoteAdapter(private val noteList: List<NoteEntity>): RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val titleTextView = itemView.findViewById<TextView>(R.id.tv_note_title)
-        private val contentTextView = itemView.findViewById<TextView>(R.id.tv_note_content)
+    class ViewHolder(private val binding: ViewHolderNoteListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(noteEntity: NoteEntity) {
-            titleTextView.text = noteEntity.title
-            contentTextView.text = noteEntity.content
+            binding.tvNoteTitle.text = noteEntity.title
+            binding.tvNoteContent.text = noteEntity.content
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LayoutInflater
-                .from(parent.context)
-                .inflate(
-                    R.layout.view_holder_note_list,
-                    parent,
-                    false
-                )
+            ViewHolderNoteListBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
         )
     }
 

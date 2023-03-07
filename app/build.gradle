@@ -34,6 +34,11 @@ android {
     dataBinding {
         enabled = true
     }
+
+    viewBinding {
+        enabled = true
+    }
+
     namespace 'com.alpharettasolutions.notes'
 }
 
